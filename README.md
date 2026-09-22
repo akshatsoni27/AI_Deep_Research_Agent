@@ -1,5 +1,7 @@
 # Signal Research Desk
 
+![Signal Research Desk preview](image.png)
+
 A Streamlit-powered multi-agent research system that turns an open question into a sourced research brief.
 
 The pipeline uses four stages:
