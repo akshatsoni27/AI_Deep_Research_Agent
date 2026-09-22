@@ -16,7 +16,7 @@ from Pipeline import run_research_pipeline
 # ============================================================================
 
 st.set_page_config(
-    page_title="Signal — AI Research Desk",
+    page_title="Multi-Agent AI Research System",
     page_icon="◈",
     layout="wide",
     initial_sidebar_state="expanded",

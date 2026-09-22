@@ -1,6 +1,6 @@
-# Signal Research Desk
+# Multi-Agent AI Research System
 
-![Signal Research Desk preview](image.png)
+![Multi-Agent AI Research System preview](image.png)
 
 A Streamlit-powered multi-agent research system that turns an open question into a sourced research brief.
 
