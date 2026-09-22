@@ -6,11 +6,8 @@ from urllib.parse import urlparse
 import aiohttp
 from bs4 import BeautifulSoup
 from tavily import TavilyClient
-import os
-from dotenv import load_dotenv
-load_dotenv()
+from config import get_setting
 
-tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 REQUEST_TIMEOUT_SECONDS = 10
 MAX_RESPONSE_BYTES = 1_000_000
@@ -67,6 +64,11 @@ async def _fetch_urls(urls: list[str]) -> list[str]:
 @tool
 def web_search(query: str) -> str:
     """Search the web for recent and reliable information on an topic. Retutns Titles, URLs and snippets"""
+    api_key = get_setting("TAVILY_API_KEY")
+    if not api_key:
+        raise RuntimeError("TAVILY_API_KEY is not configured in Streamlit Secrets or .env")
+
+    tavily = TavilyClient(api_key=api_key)
     results = tavily.search(query=query, max_results=5)
 
     out = []

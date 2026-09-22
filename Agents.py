@@ -3,15 +3,14 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search
-from dotenv import load_dotenv
-import os
-load_dotenv()
+from config import get_setting
 
 #model setup
 llm = ChatGroq(
-    model=os.getenv("GROQ_MODEL", "openai/gpt-oss-20b"),
+    model=get_setting("GROQ_MODEL", "openai/gpt-oss-20b"),
     temperature=0,
     max_tokens=1200,
+    groq_api_key=get_setting("GROQ_API_KEY"),
 )
 
 # 1st agent setup

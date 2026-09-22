@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 .streamlit/secrets.toml
+.streamlit/config.toml
 *.pem
 *.key
 
