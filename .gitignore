@@ -1,0 +1,37 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test, coverage, and tooling output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Local logs and generated output
+*.log
+*.tmp
+*.bak
+reports/
+outputs/
+
+# Streamlit and local editor files
+.streamlit/cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
